@@ -1,0 +1,8 @@
+# ABC Bygg AS – Apache-innstillinger for Domene.no
+AddDefaultCharset UTF-8
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
