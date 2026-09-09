@@ -43,3 +43,14 @@
 .neutral-hero-grid{grid-template-columns:minmax(0,760px)}
 .neutral-hero-copy{max-width:760px}
 @media (max-width:850px){.neutral-hero{padding-bottom:52px}.neutral-hero-copy{padding-top:18px}}
+
+/* Final layout polish: balance the neutral hero on desktop and unify numbered section labels. */
+.neutral-hero{position:relative;isolation:isolate;overflow:hidden}
+.neutral-hero:after{content:"";position:absolute;z-index:-1;right:0;top:34px;width:34vw;height:calc(100% - 68px);background:linear-gradient(145deg,#e5eadf 0%,#d3ddd0 100%);border-radius:48% 0 0 48%;opacity:.85}
+.neutral-hero-copy{position:relative;z-index:1}
+.section-kicker,.section-kicker.light,.services .section-kicker{font-size:10px;line-height:1;letter-spacing:.17em;text-transform:uppercase;font-weight:800}
+.section-kicker{display:flex;align-items:center;gap:11px;color:#63716a}
+.section-kicker .rule{width:30px;height:1px;background:currentColor;opacity:.45;flex:0 0 30px}
+.services .section-kicker{color:#cbd7cf}
+.gallery>.wrap>.section-kicker{margin-bottom:28px}
+@media(max-width:850px){.neutral-hero:after{display:none}.gallery>.wrap>.section-kicker{margin-bottom:26px}}
