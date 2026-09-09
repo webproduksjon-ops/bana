@@ -28,3 +28,7 @@
 .gallery-grid figure:nth-child(5n+1) img{height:390px}
 @media(max-width:850px){.neutral-hero{padding:88px 0 58px}.neutral-hero-grid{display:flex;flex-direction:column;gap:36px;align-items:stretch}.neutral-hero-copy{padding:35px 0 0}.neutral-lead{font-size:15px}.neutral-hero-image{margin:0 -18px}.neutral-hero-image img{height:360px}.neutral-hero-image figcaption{padding-left:18px;padding-right:18px}.owner-mini{margin-top:37px}.gallery-grid figure:nth-child(5n+1),.gallery-grid figure:nth-child(3n+1){grid-column:span 1}.gallery-grid figure:nth-child(5n+1) img,.gallery-grid figure:nth-child(3n+1) img{height:235px}.gallery-grid figure:nth-child(4n+1){grid-column:span 2}.gallery-grid figure:nth-child(4n+1) img{height:330px}}
 @media(max-width:390px){.neutral-hero-image{margin:0 -14px}.neutral-hero-image figcaption{padding-left:14px;padding-right:14px}.gallery-grid figure:nth-child(5n+1) img,.gallery-grid figure:nth-child(3n+1) img{height:205px}.gallery-grid figure:nth-child(4n+1) img{height:290px}}
+
+/* Gallery-only correction: show every active image in full without cropping. */
+.gallery-grid figure{align-self:start;background:var(--cream)}
+.gallery-grid img,.gallery-grid figure:nth-child(3n+1) img,.gallery-grid figure:nth-child(4n+1) img,.gallery-grid figure:nth-child(5n+1) img{height:auto!important;aspect-ratio:auto;object-fit:contain;background:var(--cream)}
