@@ -1,30 +1,26 @@
-(() => {
-  const header = document.querySelector('[data-header]');
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('#main-nav');
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('#main-nav');
 
-  const updateHeader = () => {
-    if (header) header.classList.toggle('scrolled', window.scrollY > 24);
-  };
-
-  updateHeader();
-  window.addEventListener('scroll', updateHeader, { passive: true });
-
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.querySelector('span').textContent = open ? '×' : '＋';
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+  });
+  mainNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
     });
+  });
+}
 
-    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.querySelector('span').textContent = '＋';
-    }));
-  }
-
-  const sent = new URLSearchParams(window.location.search).get('sent');
-  const status = document.querySelector('[data-form-status]');
-  if (sent === '1' && status) status.textContent = 'Takk — forespørselen er sendt. Vi tar kontakt så snart vi kan.';
-})();
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', link.getAttribute('href'));
+    }
+  });
+});
