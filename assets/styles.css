@@ -7,3 +7,7 @@
 .owner-portrait img{object-fit:contain;object-position:center bottom;padding:28px 36px 0;filter:saturate(.94)}
 .services-kicker{padding-top:4px}
 @media(max-width:850px){.owner-portrait img{object-fit:contain;object-position:center bottom;padding:18px 18px 0}}
+
+/* Services block is shorter now that its title has been removed. */
+.services.section-pad{padding-top:88px;padding-bottom:88px}
+@media(max-width:850px){.services.section-pad{padding-top:60px;padding-bottom:60px}}
