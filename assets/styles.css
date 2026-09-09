@@ -38,3 +38,8 @@
   .gallery-grid figure:nth-child(7),.gallery-grid figure:nth-child(18),.gallery-grid figure:nth-child(28),.gallery-grid figure:nth-child(31){grid-column:span 2}
   .gallery-grid figure:nth-child(7) img,.gallery-grid figure:nth-child(18) img,.gallery-grid figure:nth-child(28) img,.gallery-grid figure:nth-child(31) img{width:100%;height:auto!important;object-fit:contain}
 }
+
+/* Neutral hero without image: keep the first screen balanced on desktop and mobile. */
+.neutral-hero-grid{grid-template-columns:minmax(0,760px)}
+.neutral-hero-copy{max-width:760px}
+@media (max-width:850px){.neutral-hero{padding-bottom:52px}.neutral-hero-copy{padding-top:18px}}
