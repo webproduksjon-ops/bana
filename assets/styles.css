@@ -32,3 +32,9 @@
 /* Gallery-only correction: show every active image in full without cropping. */
 .gallery-grid figure{align-self:start;background:var(--cream)}
 .gallery-grid img,.gallery-grid figure:nth-child(3n+1) img,.gallery-grid figure:nth-child(4n+1) img,.gallery-grid figure:nth-child(5n+1) img{height:auto!important;aspect-ratio:auto;object-fit:contain;background:var(--cream)}
+
+/* Mobile gallery correction: give the four small-format images a full-width slot without cropping. */
+@media (max-width:850px){
+  .gallery-grid figure:nth-child(7),.gallery-grid figure:nth-child(18),.gallery-grid figure:nth-child(28),.gallery-grid figure:nth-child(31){grid-column:span 2}
+  .gallery-grid figure:nth-child(7) img,.gallery-grid figure:nth-child(18) img,.gallery-grid figure:nth-child(28) img,.gallery-grid figure:nth-child(31) img{width:100%;height:auto!important;object-fit:contain}
+}
