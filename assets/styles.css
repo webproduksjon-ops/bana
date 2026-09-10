@@ -197,5 +197,5 @@ body{background:var(--paper);color:var(--ink)}
 
 /* Targeted photo-position correction only: keep hero copy on green. */
 @media(max-width:850px){
-  .reference-hero-image{width:30%;right:-1px;}
+  .reference-hero-image{width:26%;right:-1px;}
 }
