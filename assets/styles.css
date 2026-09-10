@@ -182,3 +182,12 @@ body{background:var(--paper);color:var(--ink)}
   .reference-nav{display:flex}
   .reference-menu{display:none}
 }
+
+/* Final targeted fix: touch-safe menu layer and concave reference image edge. */
+.reference-hero-nav{z-index:20}
+.reference-menu{position:relative;z-index:22;touch-action:manipulation;pointer-events:auto}
+@media(max-width:850px){
+  .reference-nav{z-index:21}
+  .reference-hero-image{top:112px;right:-1px;width:42%;clip-path:ellipse(108% 78% at 100% 50%)}
+  .reference-hero-image:after{background:linear-gradient(90deg,rgba(16,43,41,.42),rgba(16,43,41,.02) 65%)}
+}
