@@ -194,3 +194,8 @@ body{background:var(--paper);color:var(--ink)}
 
 /* Speed Index optimization: keep below-the-fold rendering deferred without changing layout. */
 .services,.trust,.gallery,.contact,.site-footer{content-visibility:auto;contain-intrinsic-size:800px}
+
+/* Targeted photo-position correction only: keep hero copy on green. */
+@media(max-width:850px){
+  .reference-hero-image{width:30%;right:-1px;}
+}
