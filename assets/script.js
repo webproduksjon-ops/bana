@@ -2,6 +2,10 @@ const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('#main-nav');
 
 if (menuToggle && mainNav) {
+  const closeMenu = () => {
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  };
   const toggleMenu = (event) => {
     if (event) event.preventDefault();
     const open = mainNav.classList.toggle('open');
@@ -12,10 +16,13 @@ if (menuToggle && mainNav) {
     if (event.cancelable) event.preventDefault();
     toggleMenu();
   }, { passive: false });
+  document.addEventListener('pointerdown', (event) => {
+    if (!mainNav.classList.contains('open')) return;
+    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+  });
   mainNav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      mainNav.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      closeMenu();
     });
   });
 }
